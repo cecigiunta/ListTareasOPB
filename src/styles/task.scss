@@ -1,0 +1,11 @@
+i {
+    cursor: pointer //Esto hace que al pasar el mouse por el elemento, aparezca el dedo y se sepa que es clickeable
+} 
+.task-completed {
+color: grey;
+text-decoration: line-through; //TEXTO TACHADO
+}
+.task-pending {
+font-weight: bold;
+color: tomato;
+}
