@@ -43,7 +43,7 @@ return (
             return (
                 <Form>
                 <label htmlFor="email">Email</label>
-                <Field id="email" name="email" type="email" placeholder="youremail@email.com" />
+                <Field className="inputForm" id="email" name="email" type="email" placeholder="youremail@email.com" />
                 {
                     errors.email && touched.email &&
                     (
@@ -51,7 +51,7 @@ return (
                     )
                 }
                 <label htmlFor="password">Password</label>
-                <Field id="password" name="password" type="password" placeholder="********" />
+                <Field className="inputForm" id="password" name="password" type="password" placeholder="********" />
                 {
                     errors.password && touched.password &&
                     (

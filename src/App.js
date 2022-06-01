@@ -1,12 +1,17 @@
-import './App.css';
 import TaskListComponent from './components/containers/taskList';
-// import LoginForm from './components/pure/forms/loginForm';
-import Registro from './components/pure/forms/registerForm';
+import Routing from './routes/routes';
+
+// Import Estilos
+import './styles/App.css'
+import './styles/pureComponents.css'
+import './styles/forms.css'
+
 
 function App() {
   return (
     <div className="App">
-      <TaskListComponent></TaskListComponent>
+      <Routing />
+      {/* <TaskListComponent></TaskListComponent> */}
       
 
     </div>

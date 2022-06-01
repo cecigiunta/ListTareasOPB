@@ -2,7 +2,10 @@ import React from "react";
 
 function NotFound() {
     return (
-        <div></div>
+        <div>
+            404 - NOT FOUND
+
+        </div>
     )
 }
 export default NotFound;

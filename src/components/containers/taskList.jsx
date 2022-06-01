@@ -1,8 +1,8 @@
-import { LEVELS } from '../../models/levels';
-import {Task} from '../../models/task.class'
+import { LEVELS } from '../../models/levels'
+import { Task } from '../../models/task.class';
 import TaskComponent from '../../components/pure/task';
 import React, { useState, useEffect } from 'react';
-import TaskForm from '../pure/forms/taskForm';
+import TaskForm from '../forms/taskForm';
 
 function TaskList () {
 const defaultTask = new Task ('Example', 'Description', false, LEVELS.NORMAL); //Valores por Default

@@ -76,7 +76,7 @@ function TaskComponent({ task, complete, deleteTasks, add }) { //Le pasamos por 
     )
 }
 TaskComponent.propTypes = {
-    // task: PropTypes.instanceOf(Task).isRequired,
+    task: PropTypes.instanceOf(Task).isRequired,
     complete: PropTypes.func.isRequired
 };
 

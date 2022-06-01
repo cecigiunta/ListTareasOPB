@@ -1,7 +1,7 @@
 import React, { useRef } from "react"
 import PropTypes from 'prop-types';
-import { LEVELS } from "../../../models/levels";
-import { Task } from "../../../models/task.class";
+import { LEVELS } from "../../models/levels";
+import { Task } from "../../models/task.class";
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -23,29 +23,36 @@ function TaskForm({ add }) {
         add(newTask);
     }
 
-    // const taskInitialValues = {
-    //     name: '',
-    //     description: '',
-    //     completed: false,
-    //     level: LEVELS.NORMAL
-    // }
-
-    const taskSchema = Yup.object().shape(
-        {
-            name: Yup.string()
-                .required('Campo obligatorio'),
-            description: Yup.string()
-                .required('Campo obligatorio'),
-            level: Yup.string()
-                .oneOf([LEVELS.NORMAL, LEVELS.URGENT, LEVELS.BLOCKING], 'Debe elegir un nivel')
-                .required('Campo obligatorio')
-        }
-    )
-
-
     return (
         <div>
-            <Formik
+            <form onSubmit={addTask} className='justify-content-center align-items-center mb-4'>
+                <div className="form-outline ">
+                    <input ref={nameRef} id='inputName' type="text" placeholder="Nombre" className="form-control form-control-lg" required autoF />
+                    <input ref={descriptionRef} id='inputDescription' type="text" placeholder="Descripción" className="form-control form-control-lg" required autoFocus />
+                    <label htmlFor="selectLevel" className="sr-only">Nivel de Prioridad</label>
+                    <select className="form-control form-control-lg" ref={levelRef} defaultValue={LEVELS.NORMAL} id="selectLevel">
+                        <option value={LEVELS.NORMAL}>Normal</option>
+                        <option value={LEVELS.URGENT}>Urgente</option>
+                        <option value={LEVELS.BLOCKING}>Bloqueante</option>
+                    </select>
+                </div>
+                <button type="submit" className="btn btn-success btn-lg ms-2">Crear Tarea</button>
+            </form> 
+        </div>
+    )
+}
+
+TaskForm.propTypes = {
+    addTask: PropTypes.func.isRequired
+}
+
+
+export default TaskForm;
+
+
+ 
+
+            {/*<Formik
                 initialValues={{
                     nameRef, descriptionRef, levelRef
                 }}
@@ -82,28 +89,4 @@ function TaskForm({ add }) {
 
                 )}
             </Formik>
-
-
-            {/* <form onSubmit={addTask} className='justify-content-center align-items-center mb-4'>
-                <div className="form-outline ">
-                    <input ref={nameRef} id='inputName' type="text" placeholder="Nombre" className="form-control form-control-lg" required autoF />
-                    <input ref={descriptionRef} id='inputDescription' type="text" placeholder="Descripción" className="form-control form-control-lg" required autoFocus />
-                    <label htmlFor="selectLevel" className="sr-only">Nivel de Prioridad</label>
-                    <select className="form-control form-control-lg" ref={levelRef} defaultValue={LEVELS.NORMAL} id="selectLevel">
-                        <option value={LEVELS.NORMAL}>Normal</option>
-                        <option value={LEVELS.URGENT}>Urgente</option>
-                        <option value={LEVELS.BLOCKING}>Bloqueante</option>
-                    </select>
-                </div>
-                <button type="submit" className="btn btn-success btn-lg ms-2">Crear Tarea</button>
-            </form> */}
-        </div>
-    )
-}
-
-TaskForm.propTypes = {
-    addTask: PropTypes.func.isRequired
-}
-
-
-export default TaskForm;
+*/}

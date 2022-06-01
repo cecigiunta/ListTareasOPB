@@ -1,8 +1,8 @@
 import React from "react"
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { User } from '../../../models/user.class'
-import { ROLES } from "../../../models/roles";
+import { User } from '../../models/user.class'
+import { ROLES } from "../../models/roles";
 
 function Registro() {
 let user = new User();
@@ -50,6 +50,8 @@ function submit (values) {
 
     return(
         <div>
+            <h1>Registrá tu cuenta</h1>
+            
             <Formik     
             initialValues={{ initialValues }}
             validationSchema = {registerSchema} //Le añadimos las validaciones de arriba
@@ -67,22 +69,22 @@ function submit (values) {
             }) => (
                 <Form>
                     <label htmlFor="username">Username</label>
-                    <Field id="username" name="username" type="text" placeholder="username" />
+                    <Field className="inputForm" id="username" name="username" type="text" placeholder="username" />
                         { errors.username && touched.username &&
                         ( <ErrorMessage name="username"></ErrorMessage>)}
 
                     <label htmlFor="email">Email</label>
-                    <Field id="email" name="email" type="email" placeholder="youremail@email.com" />
+                    <Field className="inputForm" id="email" name="email" type="email" placeholder="youremail@email.com" />
                         {errors.email && touched.email &&
                         (<ErrorMessage name="email"></ErrorMessage>)}
 
                     <label htmlFor="password">Password</label>
-                    <Field id="password" name="password" type="password" placeholder="********" />
+                    <Field className="inputForm" id="password" name="password" type="password" placeholder="********" />
                         {errors.password && touched.password &&
                         (<ErrorMessage name="password" component='div'></ErrorMessage>)}
 
                     <label htmlFor="confirm">Confirm Password</label>
-                    <Field id="confirm" name="confirm" type="password" />
+                    <Field className="inputForm" id="confirm" name="confirm" type="password" />
                         {errors.confirm && touched.confirm &&
                         (<ErrorMessage name="confirm" component='div'></ErrorMessage>)}
 

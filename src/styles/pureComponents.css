@@ -1,0 +1,13 @@
+li {
+    display: inline-block;
+    margin: 20px;
+}
+
+.navList{
+    list-style: none;
+    color: white;
+    text-decoration: none;
+}
+.navBar{
+    background-color: black;
+}
