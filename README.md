@@ -1,3 +1,20 @@
+# Lista de Tareas
+
+## Proyecto del curso en OpenBootcamp (en curso)
+
+Este proyecto que me encuentro realizando me es útil para poder reforzar y adquirir nuevos conocimientos en React JS.
+Lo realizo de manera asincrónica.
+
+### Funcionalidades 
+Se trata de una pequeña lista de tareas (que aún se encuentra sin terminar) la cual permite:
+- Visualizar las tareas actuales
+- Agregar, modificar el estado y eliminar una tarea
+- (Próximamente) Se trabajará con Login para poder ingresar y Cerrar sesión en la app.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
